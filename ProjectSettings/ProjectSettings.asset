@@ -700,22 +700,22 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
-    Android: BCG_RCC
-    CloudRendering: BCG_RCC
-    EmbeddedLinux: BCG_RCC
-    GameCoreScarlett: BCG_RCC
-    GameCoreXboxOne: BCG_RCC
-    Lumin: BCG_RCC
-    Nintendo Switch: BCG_RCC
-    PS4: BCG_RCC
-    PS5: BCG_RCC
-    Stadia: BCG_RCC
-    Standalone: BCG_RCC
-    WebGL: BCG_RCC
-    Windows Store Apps: BCG_RCC
-    XboxOne: BCG_RCC
-    iPhone: BCG_RCC
-    tvOS: BCG_RCC
+    Android: BCG_RCC;RCC_PHOTON
+    CloudRendering: BCG_RCC;RCC_PHOTON
+    EmbeddedLinux: BCG_RCC;RCC_PHOTON
+    GameCoreScarlett: BCG_RCC;RCC_PHOTON
+    GameCoreXboxOne: BCG_RCC;RCC_PHOTON
+    Lumin: BCG_RCC;RCC_PHOTON
+    Nintendo Switch: BCG_RCC;RCC_PHOTON
+    PS4: BCG_RCC;RCC_PHOTON
+    PS5: BCG_RCC;RCC_PHOTON
+    Stadia: BCG_RCC;RCC_PHOTON
+    Standalone: BCG_RCC;RCC_PHOTON
+    WebGL: BCG_RCC;RCC_PHOTON
+    Windows Store Apps: BCG_RCC;RCC_PHOTON
+    XboxOne: BCG_RCC;RCC_PHOTON
+    iPhone: BCG_RCC;RCC_PHOTON
+    tvOS: BCG_RCC;RCC_PHOTON
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
