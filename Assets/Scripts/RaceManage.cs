@@ -22,6 +22,7 @@ public class RaceManage : MonoBehaviour
 
     public Text PositionText;
     public Text PosText;
+    public Text LapsText;
 
 
     private void Awake()
@@ -44,6 +45,7 @@ public class RaceManage : MonoBehaviour
 
         SetCheckpoints();
         SetCarPosition();
+        SetLaps();
     }
 
     void SetCheckpoints()
@@ -65,6 +67,11 @@ public class RaceManage : MonoBehaviour
         }
     }
 
+    void SetLaps()
+    {
+        lapsForeachCars = new int[totalcars];
+    }
+
     void SetCarPosition()
     {
         for (int i = 0; i < totalcars; i++)
@@ -83,13 +90,13 @@ public class RaceManage : MonoBehaviour
 
         comparePositions(carNumber);
 
-        if (cpNumber == totalcheckpoints)
+        if (cpNumber + 1 == totalcheckpoints)
         {
             lapsForeachCars[carNumber]++;
 
-            if (lapsForeachCars[carNumber] == totalLaps && carNumber == 0)
+            if (lapsForeachCars[carNumber] == totalLaps && carNumber == 1)
             {
-                if (Cars[0].GetComponent<CarCPManager>().CarPosition == 0)
+                if (Cars[1].GetComponent<CarCPManager>().CarPosition == 1)
                 {
                     PosText.text = "WIN! Вы заняли 1 место!";
                 }
@@ -138,6 +145,7 @@ public class RaceManage : MonoBehaviour
 
     private void Update()
     {
-        PositionText.text = Cars[0].GetComponent<CarCPManager>().CarPosition.ToString() + "/2";
+        PositionText.text = Cars[1].GetComponent<CarCPManager>().CarPosition.ToString() + "/" + totalcars.ToString();
+        LapsText.text = lapsForeachCars[1].ToString() + "/" + totalLaps.ToString();
     }
 }
