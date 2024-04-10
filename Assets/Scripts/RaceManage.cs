@@ -145,7 +145,7 @@ public class RaceManage : MonoBehaviour
 
     private void Update()
     {
-        PositionText.text = Cars[1].GetComponent<CarCPManager>().CarPosition.ToString() + "/" + totalcars.ToString();
+        PositionText.text = Cars[0].GetComponent<CarCPManager>().CarPosition.ToString() + "/" + totalcars.ToString();
         LapsText.text = lapsForeachCars[1].ToString() + "/" + totalLaps.ToString();
     }
 }
