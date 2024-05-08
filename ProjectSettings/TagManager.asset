@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - CP
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Car_01
   - Car_02
   - Car_03
-  - Car_03
+  - Car_04
   - 
   - 
   - 

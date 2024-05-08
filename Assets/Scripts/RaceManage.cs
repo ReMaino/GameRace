@@ -11,7 +11,7 @@ public class RaceManage : MonoBehaviour
     public GameObject CheckpointHolder;
 
     public Transform[] CheckpointsPosition;
-    public GameObject[] Cars;
+    public List<GameObject> Cars;
     public GameObject[] CheckpointsForeachCar;
 
     private int totalcars;
@@ -25,20 +25,38 @@ public class RaceManage : MonoBehaviour
     public Text LapsText;
 
 
-    private void Awake()
+    public void InitializationCar(GameObject Car)
     {
-        RCC_CarControllerV3[] carControllerser = FindObjectsOfType<RCC_CarControllerV3>();
-        Cars = new GameObject[carControllerser.Length];
+        Cars.Add(Car);
+        totalcars++;
+        SetCarPosition();
+        SetLaps();
+        SetCheckpoints();
+    }
 
-        for (int i = 0; i < carControllerser.Length; i++)
-        {
-            Cars[i] = carControllerser[i].gameObject;
-        }
+    public int GetLap(int carNumber)
+    {
+        return lapsForeachCars[carNumber];
+    }
+
+    public int GetTotalCars()
+    {
+        return totalcars;
+    }
+
+    public int GetTotalLaps()
+    {
+        return totalLaps;
+    }
+
+    public bool FinishTrace(int carNumber)
+    {
+        return lapsForeachCars[carNumber] >= totalLaps;
     }
 
     void Start()
     {
-        totalcars = Cars.Length;
+        totalcars = Cars.Count;
         totalcheckpoints = CheckpointHolder.transform.childCount;
 
         RaceUI.SetActive(true);
@@ -94,17 +112,6 @@ public class RaceManage : MonoBehaviour
         {
             lapsForeachCars[carNumber]++;
 
-            if (lapsForeachCars[carNumber] == totalLaps && carNumber == 1)
-            {
-                if (Cars[1].GetComponent<CarCPManager>().CarPosition == 1)
-                {
-                    PosText.text = "WIN! Вы заняли 1 место!";
-                }
-                else
-                {
-                    PosText.text = "LOOSE! Вы заняли " + Cars[0].GetComponent<CarCPManager>().CarPosition.ToString() + " место.";
-                }
-            }
         }
     }
 
@@ -142,10 +149,4 @@ public class RaceManage : MonoBehaviour
         }
     }
 
-
-    private void Update()
-    {
-        PositionText.text = Cars[0].GetComponent<CarCPManager>().CarPosition.ToString() + "/" + totalcars.ToString();
-        LapsText.text = lapsForeachCars[1].ToString() + "/" + totalLaps.ToString();
-    }
 }
