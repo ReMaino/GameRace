@@ -31,6 +31,8 @@ public class RCC_PhotonDemo : Photon.Pun.MonoBehaviourPunCallbacks {
     public Transform[] spawnPoints;
     public GameObject menu;
 
+    [SerializeField] private RaceManage raceManager;
+
     private void Start() {
 
         if (reconnectIfFails && !PhotonNetwork.IsConnectedAndReady)
@@ -42,7 +44,9 @@ public class RCC_PhotonDemo : Photon.Pun.MonoBehaviourPunCallbacks {
 
     public void Spawn() {
 
-        int actorNo = PhotonNetwork.LocalPlayer.ActorNumber;
+        int actorNo = raceManager.GetTotalCars();
+
+        Debug.Log(raceManager.GetTotalCars());
 
         if (actorNo > spawnPoints.Length) {
 
@@ -65,16 +69,16 @@ public class RCC_PhotonDemo : Photon.Pun.MonoBehaviourPunCallbacks {
 
         if (lastKnownPos == Vector3.zero) {
 
-            lastKnownPos = spawnPoints[actorNo - 1].position;
-            lastKnownRot = spawnPoints[actorNo - 1].rotation;
+            lastKnownPos = spawnPoints[actorNo].position;
+            lastKnownRot = spawnPoints[actorNo].rotation;
 
         }
 
         lastKnownRot.x = 0f;
         lastKnownRot.z = 0f;
 
-        if (RCC_SceneManager.Instance.activePlayerVehicle)
-            PhotonNetwork.Destroy(RCC_SceneManager.Instance.activePlayerVehicle.gameObject);
+      /*  if (RCC_SceneManager.Instance.activePlayerVehicle) затронем
+            PhotonNetwork.Destroy(RCC_SceneManager.Instance.activePlayerVehicle.gameObject);*/
 
         newVehicle = PhotonNetwork.Instantiate("Photon Vehicles/" + RCC_PhotonDemoVehicles.Instance.vehicles[selectedCarIndex].name, lastKnownPos + (Vector3.up), lastKnownRot, 0).GetComponent<RCC_CarControllerV3>();
 

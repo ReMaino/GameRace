@@ -5,38 +5,25 @@ using UnityEngine.UI;
 
 public class RaceManage : MonoBehaviour
 {
-    public GameObject RaceUI;
-
     public GameObject CP;
     public GameObject CheckpointHolder;
 
-    public Transform[] CheckpointsPosition;
-    public List<GameObject> Cars;
-    public GameObject[] CheckpointsForeachCar;
+    public Transform[] CheckpointsPosition; 
+    public List<Racer> Racers; // Racers
+//    public GameObject[] CheckpointsForeachCar; // его
 
-    private int totalcars;
+    private int totalcars = 0;
     private int totalcheckpoints;
 
-    public int[] lapsForeachCars;
     public int totalLaps;
 
-    public Text PositionText;
-    public Text PosText;
-    public Text LapsText;
-
-
-    public void InitializationCar(GameObject Car)
-    {
-        Cars.Add(Car);
-        totalcars++;
-        SetCarPosition();
-        SetLaps();
-        SetCheckpoints();
-    }
+    public Text PositionText; // может быть
+    public Text FinalText; // >
+    public Text LapsText; // >
 
     public int GetLap(int carNumber)
     {
-        return lapsForeachCars[carNumber];
+        return Racers[carNumber].Lap;
     }
 
     public int GetTotalCars()
@@ -49,21 +36,37 @@ public class RaceManage : MonoBehaviour
         return totalLaps;
     }
 
+    public GameObject SetCp()
+    {
+        CP = Instantiate(CP, CheckpointsPosition[0].position, CheckpointsPosition[0].rotation);
+        CP.name = "CP" + Racers.Count;
+        CP.layer = 15 + Racers.Count;
+
+        return CP;
+    }
+
+    public void SetRacerPosition(Racer racer)
+    {
+        Racers.Add(racer);
+
+        totalcars++;
+
+        Racers[totalcars - 1].Car.GetComponent<CarCPManager>().CarPosition = totalcars;
+        Racers[totalcars - 1].Car.GetComponent<CarCPManager>().CarNumber = totalcars - 1;
+    }
+
     public bool FinishTrace(int carNumber)
     {
-        return lapsForeachCars[carNumber] >= totalLaps;
+        return Racers[carNumber].Lap >= totalLaps; // поменяем
     }
 
     void Start()
     {
-        totalcars = Cars.Count;
+        totalcars = Racers.Count;
         totalcheckpoints = CheckpointHolder.transform.childCount;
-
-        RaceUI.SetActive(true);
 
         SetCheckpoints();
         SetCarPosition();
-        SetLaps();
     }
 
     void SetCheckpoints()
@@ -74,52 +77,39 @@ public class RaceManage : MonoBehaviour
         {
             CheckpointsPosition[i] = CheckpointHolder.transform.GetChild(i).transform;
         }
-
-        CheckpointsForeachCar = new GameObject[totalcars];
-
-        for (int i = 0; i < totalcars; i++)
-        {
-            CheckpointsForeachCar[i] = Instantiate(CP, CheckpointsPosition[0].position, CheckpointsPosition[0].rotation);
-            CheckpointsForeachCar[i].name = "CP" + i;
-            CheckpointsForeachCar[i].layer = 15 + i;
-        }
     }
 
-    void SetLaps()
+    void SetCheckpointForCar()
     {
-        lapsForeachCars = new int[totalcars];
+
     }
 
     void SetCarPosition()
     {
-        for (int i = 0; i < totalcars; i++)
-        {
-            Cars[i].GetComponent<CarCPManager>().CarPosition = i + 1;
-            Cars[i].GetComponent<CarCPManager>().CarNumber = i;
-        }
+
     }
 
     public void CarCollectedCP(int carNumber, int cpNumber)
     {
         cpNumber = cpNumber % CheckpointsPosition.Length;
 
-        CheckpointsForeachCar[carNumber].transform.position = CheckpointsPosition[cpNumber].transform.position;
-        CheckpointsForeachCar[carNumber].transform.rotation = CheckpointsPosition[cpNumber].transform.rotation;
+        Racers[carNumber].Cp.transform.position = CheckpointsPosition[cpNumber].transform.position;
+        Racers[carNumber].Cp.transform.rotation = CheckpointsPosition[cpNumber].transform.rotation;
 
         comparePositions(carNumber);
 
         if (cpNumber + 1 == totalcheckpoints)
         {
-            lapsForeachCars[carNumber]++;
+            Racers[carNumber].Lap++;
 
         }
     }
 
     void comparePositions(int carNumber)
     {
-        if (Cars[carNumber].GetComponent<CarCPManager>().CarPosition > 1)
+        if (Racers[carNumber].Car.GetComponent<CarCPManager>().CarPosition > 1)
         {
-            GameObject currentCar = Cars[carNumber];
+            GameObject currentCar = Racers[carNumber].Car;
             int currentCarPosition = currentCar.GetComponent<CarCPManager>().CarPosition;
             int currentCarCp = currentCar.GetComponent<CarCPManager>().cpCrossed;
 
@@ -129,9 +119,9 @@ public class RaceManage : MonoBehaviour
 
             for (int i = 0; i < totalcars; i++)
             {
-                if (Cars[i].GetComponent<CarCPManager>().CarPosition == currentCarPosition - 1)
+                if (Racers[i].Car.GetComponent<CarCPManager>().CarPosition == currentCarPosition - 1)
                 {
-                    carInFront = Cars[i];
+                    carInFront = Racers[i].Car;
                     carInFrontCp = carInFront.GetComponent<CarCPManager>().cpCrossed;
                     carInFrontPos = carInFront.GetComponent<CarCPManager>().CarPosition;
                     break;

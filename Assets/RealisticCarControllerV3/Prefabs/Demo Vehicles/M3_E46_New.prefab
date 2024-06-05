@@ -24799,6 +24799,7 @@ GameObject:
   - component: {fileID: 460104198531870883}
   - component: {fileID: 7241874398611711901}
   - component: {fileID: -4276257564462378405}
+  - component: {fileID: -7404788286686532863}
   m_Layer: 8
   m_Name: M3_E46_New
   m_TagString: Untagged
@@ -25214,6 +25215,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2daa2a068bcb924eba954561537ddfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PositionText: {fileID: 0}
+  LapsText: {fileID: 0}
+  PosText: {fileID: 0}
   CarNumber: 0
   cpCrossed: 0
   CarPosition: 0
@@ -25236,7 +25240,8 @@ MonoBehaviour:
   Synchronization: 2
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: -4276257564462378405}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -25254,6 +25259,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connected: 0
   isMine: 0
+--- !u!114 &-7404788286686532863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8573549319431884798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2300a8cf773b60247a6eed7514a342cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Car: {fileID: 0}
+  Cp: {fileID: 0}
+  Lap: 0
+  RaceManager: {fileID: 0}
 --- !u!1 &8573549319482302270
 GameObject:
   m_ObjectHideFlags: 0

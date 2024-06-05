@@ -24799,6 +24799,7 @@ GameObject:
   - component: {fileID: -8873655301793676588}
   - component: {fileID: -7142401623843311147}
   - component: {fileID: -3189566913795127817}
+  - component: {fileID: 7996730012288530289}
   m_Layer: 8
   m_Name: M3_E46_New
   m_TagString: Untagged
@@ -25246,18 +25247,36 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8573549319431884798}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2daa2a068bcb924eba954561537ddfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PositionText: {fileID: 0}
-  LapsText: {fileID: 0}
-  PosText: {fileID: 0}
   CarNumber: 0
   cpCrossed: 0
   CarPosition: 0
   raceManager: {fileID: 0}
+--- !u!114 &7996730012288530289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8573549319431884798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2300a8cf773b60247a6eed7514a342cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PositionText: {fileID: 0}
+  LapsText: {fileID: 0}
+  FinalText: {fileID: 0}
+  Car: {fileID: 0}
+  Cp: {fileID: 0}
+  Lap: 0
+  raceManager: {fileID: 0}
+  cpManager: {fileID: 0}
+  isAi: 0
 --- !u!1 &8573549319482302270
 GameObject:
   m_ObjectHideFlags: 0
