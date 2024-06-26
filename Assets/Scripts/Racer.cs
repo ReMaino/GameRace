@@ -9,6 +9,8 @@ public class Racer : MonoBehaviour
     public Text PositionText;
     public Text LapsText;
     public Text FinalText;
+    public GameObject ReadyForm;
+    public GameObject NotReadyForm;
 
     PhotonView pv;
     public GameObject Car;
@@ -17,6 +19,8 @@ public class Racer : MonoBehaviour
 
     public RaceManage raceManager;
     public CarCPManager cpManager;
+
+    public bool isReady;
 
     public bool isAi = false;
 
@@ -29,16 +33,38 @@ public class Racer : MonoBehaviour
         raceManager.SetRacerPosition(gameObject.GetComponent<Racer>());
         cpManager = gameObject.GetComponent<CarCPManager>();
 
-        isAi = gameObject.tag == "Enemy";
+        isReady = isAi = gameObject.tag == "Enemy";
 
         PositionText = raceManager.PositionText;
         LapsText = raceManager.LapsText;
         FinalText = raceManager.FinalText;
+        ReadyForm = raceManager.Ready;
+        NotReadyForm = raceManager.NotReady;
+        this.gameObject.GetComponent<RCC_CarControllerV3>().enabled = false;
 
         if (!isAi)
         {
             pv = GetComponent<PhotonView>();
         }
+    }
+
+    public void SetReady()
+    {
+        if (!isAi && pv.IsMine)
+        {
+            if (ReadyForm.activeSelf == true)
+            {
+                NotReadyForm.SetActive(true);
+                ReadyForm.SetActive(false);
+            }
+            else
+            {
+                NotReadyForm.SetActive(false);
+                ReadyForm.SetActive(true);
+            }
+
+            isReady = !isReady;
+        }      
     }
 
     private void Update()

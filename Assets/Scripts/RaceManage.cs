@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 using UnityEngine.UI;
 
 public class RaceManage : MonoBehaviour
@@ -16,10 +17,17 @@ public class RaceManage : MonoBehaviour
     private int totalcheckpoints;
 
     public int totalLaps;
+    public bool ReadyPlayers = false;
+
+    public StartManage startManager;
 
     public Text PositionText; // может быть
     public Text FinalText; // >
     public Text LapsText; // >
+    public Button ReadyButton;
+    public GameObject NotReady;
+    public GameObject Ready;
+
 
     public int GetLap(int carNumber)
     {
@@ -34,6 +42,28 @@ public class RaceManage : MonoBehaviour
     public int GetTotalLaps()
     {
         return totalLaps;
+    }
+
+    public void SetReady()
+    {
+        foreach (Racer racer in Racers)
+        {
+            racer.SetReady();
+        }
+    }
+
+    private void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(totalcars);
+            stream.SendNext(Racers);
+        }
+        else if (stream.IsReading)
+        {
+            totalcars = (int)stream.ReceiveNext();
+            Racers = (List<Racer>)stream.ReceiveNext();
+        }
     }
 
     public GameObject SetCp()
@@ -134,9 +164,29 @@ public class RaceManage : MonoBehaviour
                 currentCar.GetComponent<CarCPManager>().CarPosition = currentCarPosition - 1;
                 carInFront.GetComponent<CarCPManager>().CarPosition = carInFrontPos + 1;
 
-                Debug.Log("Car " + carNumber + " has over taken " + carInFront.GetComponent<CarCPManager>().CarNumber);
+                //Debug.Log("Car " + carNumber + " has over taken " + carInFront.GetComponent<CarCPManager>().CarNumber);
             }
         }
     }
 
+    private void Update()
+    {
+        Debug.Log(totalcars + " : " + ReadyPlayers);
+
+        if (totalcars != 0 && ReadyPlayers)
+        {
+            startManager.SpawnAIs(totalcars);
+            startManager.GoRace(Racers);
+        }
+
+        ReadyPlayers = totalcars != 0;
+
+        foreach (Racer racer in Racers)
+        {
+            if (!racer.isReady)
+            {
+                ReadyPlayers = false;
+            }
+        }
+    }
 }

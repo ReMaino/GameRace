@@ -587,6 +587,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1063018086394068554}
+  - component: {fileID: -1135434776882637429}
   m_Layer: 8
   m_Name: E46_New
   m_TagString: Untagged
@@ -644,6 +645,20 @@ Transform:
   m_Father: {fileID: 8573549319431884787}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-1135434776882637429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399494346684310768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3400764109dcd448bc0bc3fa3b11ea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSpeed: 240
+  radius: 20
 --- !u!1 &734525036447459925
 GameObject:
   m_ObjectHideFlags: 0
@@ -8717,6 +8732,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8573549317608607019}
+  - component: {fileID: -1913551876665842667}
   m_Layer: 8
   m_Name: COM
   m_TagString: Untagged
@@ -8739,6 +8755,20 @@ Transform:
   m_Father: {fileID: 8573549319431884787}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-1913551876665842667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8573549317608607016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3400764109dcd448bc0bc3fa3b11ea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSpeed: 240
+  radius: 20
 --- !u!1 &8573549317866990253
 GameObject:
   m_ObjectHideFlags: 0
@@ -13587,6 +13617,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8573549318057129579}
+  - component: {fileID: 9141698156292289345}
   m_Layer: 8
   m_Name: Lights
   m_TagString: Untagged
@@ -13621,6 +13652,20 @@ Transform:
   m_Father: {fileID: 8573549319431884787}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9141698156292289345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8573549318057129576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3400764109dcd448bc0bc3fa3b11ea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSpeed: 240
+  radius: 20
 --- !u!1 &8573549318223717639
 GameObject:
   m_ObjectHideFlags: 0
@@ -14337,6 +14382,7 @@ GameObject:
   - component: {fileID: 8573549318363046133}
   - component: {fileID: 8573549318363046130}
   - component: {fileID: 8573549318363046131}
+  - component: {fileID: 5433233249250057186}
   m_Layer: 8
   m_Name: HoodCamera
   m_TagString: Player
@@ -14483,6 +14529,20 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 0
+--- !u!114 &5433233249250057186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8573549318363046129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3400764109dcd448bc0bc3fa3b11ea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSpeed: 240
+  radius: 20
 --- !u!1 &8573549318449652883
 GameObject:
   m_ObjectHideFlags: 0
@@ -19284,6 +19344,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8573549318809938866}
+  - component: {fileID: 8146813517587291841}
   m_Layer: 8
   m_Name: Exhausts
   m_TagString: Untagged
@@ -19308,6 +19369,20 @@ Transform:
   m_Father: {fileID: 8573549319431884787}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8146813517587291841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8573549318809938867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3400764109dcd448bc0bc3fa3b11ea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSpeed: 240
+  radius: 20
 --- !u!1 &8573549318857603416
 GameObject:
   m_ObjectHideFlags: 0
@@ -19348,6 +19423,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8573549318869264406}
+  - component: {fileID: -1414710780124310392}
   m_Layer: 8
   m_Name: Wheel Colliders
   m_TagString: Untagged
@@ -19374,6 +19450,20 @@ Transform:
   m_Father: {fileID: 8573549319431884787}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-1414710780124310392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8573549318869264407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3400764109dcd448bc0bc3fa3b11ea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSpeed: 240
+  radius: 20
 --- !u!1 &8573549318941032827
 GameObject:
   m_ObjectHideFlags: 0
@@ -25215,9 +25305,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2daa2a068bcb924eba954561537ddfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PositionText: {fileID: 0}
-  LapsText: {fileID: 0}
-  PosText: {fileID: 0}
   CarNumber: 0
   cpCrossed: 0
   CarPosition: 0
@@ -25271,10 +25358,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2300a8cf773b60247a6eed7514a342cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PositionText: {fileID: 0}
+  LapsText: {fileID: 0}
+  FinalText: {fileID: 0}
   Car: {fileID: 0}
   Cp: {fileID: 0}
   Lap: 0
-  RaceManager: {fileID: 0}
+  raceManager: {fileID: 0}
+  cpManager: {fileID: 0}
+  isReady: 0
+  isAi: 0
 --- !u!1 &8573549319482302270
 GameObject:
   m_ObjectHideFlags: 0
@@ -25669,6 +25762,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8573549319596376892}
   - component: {fileID: 8573549319596376895}
+  - component: {fileID: -614776446398357763}
   m_Layer: 8
   m_Name: WheelCamera
   m_TagString: Untagged
@@ -25703,6 +25797,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc8ca0593957224185acb02da2730dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-614776446398357763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8573549319596376893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3400764109dcd448bc0bc3fa3b11ea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSpeed: 240
+  radius: 20
 --- !u!1 &8573549319602007868
 GameObject:
   m_ObjectHideFlags: 0

@@ -51,6 +51,7 @@ public class RCC_PhotonDemo : Photon.Pun.MonoBehaviourPunCallbacks {
         if (actorNo > spawnPoints.Length) {
 
             while (actorNo > spawnPoints.Length)
+            while (actorNo > spawnPoints.Length)
                 actorNo -= spawnPoints.Length;
 
         }
@@ -77,6 +78,7 @@ public class RCC_PhotonDemo : Photon.Pun.MonoBehaviourPunCallbacks {
         lastKnownRot.x = 0f;
         lastKnownRot.z = 0f;
 
+        
       /*  if (RCC_SceneManager.Instance.activePlayerVehicle) затронем
             PhotonNetwork.Destroy(RCC_SceneManager.Instance.activePlayerVehicle.gameObject);*/
 

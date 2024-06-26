@@ -25271,11 +25271,14 @@ MonoBehaviour:
   PositionText: {fileID: 0}
   LapsText: {fileID: 0}
   FinalText: {fileID: 0}
+  ReadyForm: {fileID: 0}
+  NotReadyForm: {fileID: 0}
   Car: {fileID: 0}
   Cp: {fileID: 0}
   Lap: 0
   raceManager: {fileID: 0}
   cpManager: {fileID: 0}
+  isReady: 0
   isAi: 0
 --- !u!1 &8573549319482302270
 GameObject:
