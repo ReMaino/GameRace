@@ -6,18 +6,19 @@ using Photon.Pun;
 
 public class Racer : MonoBehaviour
 {
-    public Text PositionText;
-    public Text LapsText;
-    public Text FinalText;
-    public GameObject ReadyForm;
-    public GameObject NotReadyForm;
+    public Text positionText;
+    public Text lapsText;
+    public Text finalText;
+    public GameObject readyForm;
+    public GameObject notReadyForm;
+
+    public Button readyButton;
 
     PhotonView pv;
-    public GameObject Car;
-    public GameObject Cp;
-    public int Lap;
+    public GameObject CP;
+    public int lap;
 
-    public RaceManage raceManager;
+    public RaceManager raceManager;
     public CarCPManager cpManager;
 
     public bool isReady;
@@ -26,64 +27,122 @@ public class Racer : MonoBehaviour
 
     private void Awake()
     {
-        raceManager = FindObjectOfType<RaceManage>();
-        Car = gameObject;
-        Cp = raceManager.SetCp();
-        Lap = 0;
-        raceManager.SetRacerPosition(gameObject.GetComponent<Racer>());
+        raceManager = FindObjectOfType<RaceManager>();
+        CP = raceManager.SetCp();
+        lap = 0;
+
         cpManager = gameObject.GetComponent<CarCPManager>();
 
         isReady = isAi = gameObject.tag == "Enemy";
 
-        PositionText = raceManager.PositionText;
-        LapsText = raceManager.LapsText;
-        FinalText = raceManager.FinalText;
-        ReadyForm = raceManager.Ready;
-        NotReadyForm = raceManager.NotReady;
+        positionText = raceManager.positionText;
+        lapsText = raceManager.lapsText;
+        finalText = raceManager.finalText;
+        readyForm = raceManager.ready;
+        notReadyForm = raceManager.notReady;
+        readyButton = raceManager.readyButton;
+
         this.gameObject.GetComponent<RCC_CarControllerV3>().enabled = false;
 
         if (!isAi)
         {
             pv = GetComponent<PhotonView>();
+            if (pv.IsMine)
+            {
+                pv.RPC("RPC_AddPlayer", RpcTarget.AllBuffered);
+                readyButton.onClick.AddListener(this.SetReady);
+            }
         }
+        else
+        {
+            raceManager.SetRacerPosition(this);
+        }
+    }
+
+    [PunRPC]
+    public void RPC_AddPlayer()
+    {
+        RaceManager.raceManager.SetRacerPosition(this);
+    }
+
+    [PunRPC]
+    public void RPC_UpdateReady()
+    {
+        isReady = !isReady;
+        RaceManager.raceManager.SetReady(isReady);
     }
 
     public void SetReady()
     {
         if (!isAi && pv.IsMine)
         {
-            if (ReadyForm.activeSelf == true)
+            if (readyForm.activeSelf == true)
             {
-                NotReadyForm.SetActive(true);
-                ReadyForm.SetActive(false);
+                notReadyForm.SetActive(true);
+                readyForm.SetActive(false);
             }
             else
             {
-                NotReadyForm.SetActive(false);
-                ReadyForm.SetActive(true);
+                notReadyForm.SetActive(false);
+                readyForm.SetActive(true);
             }
 
-            isReady = !isReady;
-        }      
+            // Debug.Log(isReady);
+
+
+            pv.RPC("RPC_UpdateReady", RpcTarget.AllBuffered);
+        }
+    }
+
+    public void StartRacer()
+    {
+        StartCoroutine(StartRace());
+    }
+
+    private IEnumerator StartRace()
+    {
+        if (!isAi)
+        {
+            gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            this.gameObject.GetComponent<RCC_CarControllerV3>().enabled = true;
+            finalText.text = "3";
+            yield return new WaitForSeconds(1);
+            finalText.text = "2";
+            yield return new WaitForSeconds(1);
+            finalText.text = "1";
+            yield return new WaitForSeconds(1);
+            finalText.text = "ПОГНАЛИ!";
+            gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            yield return new WaitForSeconds(2);
+            finalText.gameObject.SetActive(false);
+        }
+        else
+        {
+            yield return new WaitForSeconds(3);
+            this.gameObject.GetComponent<RCC_CarControllerV3>().enabled = true;
+        }
+        
+        //cam.cameraMode = RCC_Camera.CameraMode.TPS; 
     }
 
     private void Update()
     {
         if (!isAi && pv.IsMine)
         {
-            PositionText.text = cpManager.CarPosition.ToString() + "/" + raceManager.GetTotalCars().ToString();
-            LapsText.text = raceManager.GetLap(cpManager.CarNumber).ToString() + "/" + raceManager.GetTotalLaps().ToString();
+            positionText.text = cpManager.carPosition.ToString() + "/" + raceManager.GetTotalCars().ToString() + "/" + raceManager.readyPlayers.ToString() + "/" + isReady;
+            lapsText.text = raceManager.GetLap(cpManager.carNumber).ToString() + "/" + raceManager.GetTotalLaps().ToString();
 
-            if (raceManager.FinishTrace(cpManager.CarNumber))
+            if (raceManager.FinishTrace(cpManager.carNumber))
             {
-                RCC.SetControl(gameObject.GetComponent<RCC_CarControllerV3>(), false);
-                if (cpManager.CarPosition == 1)
+                finalText.gameObject.SetActive(true);
+                this.gameObject.GetComponent<RCC_CarControllerV3>().enabled = false;
+                if (cpManager.carPosition == 1)
                 {
-                    FinalText.text = "WIN! Вы заняли 1 место!";
+                    finalText.text = "WIN! Вы заняли 1 место!";
                 }
                 else
                 {
-                    FinalText.text = "LOOSE! Вы заняли " + cpManager.CarPosition.ToString() + " место.";
+                    finalText.text = "LOOSE! Вы заняли " + cpManager.carPosition.ToString() + " место.";
                 }
                 this.enabled = false;
             }

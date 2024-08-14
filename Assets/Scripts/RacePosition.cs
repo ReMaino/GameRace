@@ -5,15 +5,13 @@ using UnityEngine.UI;
 
 public class RacePosition : MonoBehaviour
 {
-    public Text positionText;
     public Transform playerTransform;
     public Transform[] checkpoints; // массив всех чекпоинтов на трассе
-    public int totalPlayers = 4; // общее количество игроков
+    public int totalPlayers = 4; // общее количество игроков (поменять)
 
     void Update()
     {
         int playerPosition = CalculatePlayerPosition();
-        positionText.text = playerPosition + "/" + totalPlayers;
     }
 
     private int CalculatePlayerPosition()

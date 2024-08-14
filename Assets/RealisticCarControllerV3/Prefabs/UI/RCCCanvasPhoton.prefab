@@ -9280,7 +9280,7 @@ GameObject:
   - component: {fileID: 1288183526957153272}
   - component: {fileID: 7344398800182421341}
   m_Layer: 5
-  m_Name: PositionTexttt
+  m_Name: PositionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10514,86 +10514,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buttonType: 4
   gearDirection: 0
---- !u!1 &2578533919292825107
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1861136614637771397}
-  - component: {fileID: 905172955689491333}
-  - component: {fileID: 6767768870037744100}
-  m_Layer: 5
-  m_Name: LapsTexttt (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1861136614637771397
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2578533919292825107}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.41662914, y: 0.41662914, z: 0.41662914}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4260037325011273851}
-  m_RootOrder: 15
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 960.00006, y: 99.99998}
-  m_SizeDelta: {x: 1159.273, y: 441.695}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &905172955689491333
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2578533919292825107}
-  m_CullTransparentMesh: 1
---- !u!114 &6767768870037744100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2578533919292825107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 785355b5b16010247bb360cd2c286bd8, type: 3}
-    m_FontSize: 300
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 300
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 
 --- !u!1 &2627637111753730415
 GameObject:
   m_ObjectHideFlags: 0
@@ -16787,7 +16707,6 @@ RectTransform:
   - {fileID: 7878525930166788442}
   - {fileID: 1978450019923723955}
   - {fileID: 4113774320229439119}
-  - {fileID: 1861136614637771397}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17000,6 +16919,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   menu: {fileID: 1987330756349463952}
+  totalplayers: 0
   raceManager: {fileID: 0}
 --- !u!1 &3862563180988395291
 GameObject:
@@ -19494,7 +19414,7 @@ GameObject:
   - component: {fileID: 3675265059699145874}
   - component: {fileID: 8335113596377741171}
   m_Layer: 5
-  m_Name: LapsTexttt
+  m_Name: LapsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35575,7 +35495,7 @@ GameObject:
   - component: {fileID: 2530325086389530089}
   - component: {fileID: 4154221097219458314}
   m_Layer: 5
-  m_Name: Text (Legacy) (1)
+  m_Name: FinalText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

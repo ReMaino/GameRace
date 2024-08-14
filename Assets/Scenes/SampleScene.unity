@@ -4356,7 +4356,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97533850}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -16.629993, y: 0, z: 4.9100003}
+  m_LocalPosition: {x: -16.629993, y: -4.7, z: 4.9100003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29161,23 +29161,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CP: {fileID: 1154780626419927756, guid: 488a03ae24383184bbb0f003ee6d4c1c, type: 3}
-  CheckpointHolder: {fileID: 1543698997}
-  CheckpointsPosition:
-  - {fileID: 1950436754}
-  - {fileID: 434789197}
-  - {fileID: 1526525570}
-  - {fileID: 1676410197}
-  - {fileID: 849083319}
-  Racers: []
+  checkpointHolder: {fileID: 1543698997}
+  checkpointsPosition: []
+  racers: []
   totalLaps: 1
-  ReadyPlayers: 0
+  readyPlayers: 0
   startManager: {fileID: 962552897}
-  PositionText: {fileID: 1659029804}
-  FinalText: {fileID: 1659029803}
-  LapsText: {fileID: 1659029802}
-  ReadyButton: {fileID: 1659029807}
-  NotReady: {fileID: 1659029806}
-  Ready: {fileID: 1659029805}
+  positionText: {fileID: 1659029804}
+  finalText: {fileID: 1659029803}
+  lapsText: {fileID: 1659029802}
+  readyButton: {fileID: 1659029807}
+  notReady: {fileID: 1659029806}
+  ready: {fileID: 1659029805}
 --- !u!1001 &719636526
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37788,7 +37783,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 936434873}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -25.32, y: 0, z: 0.5}
+  m_LocalPosition: {x: -25.32, y: -4.7, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -38880,9 +38875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5bc20f861e68264b8874929d32afe8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countText: {fileID: 1162587196}
-  Enemies: []
-  Spawners:
+  spawners:
   - {fileID: 1956995333}
   - {fileID: 1897378759}
   - {fileID: 97533851}
@@ -45895,7 +45888,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1133506795}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -16.83, y: 0, z: 0.31}
+  m_LocalPosition: {x: -16.83, y: -4.7, z: 0.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46608,17 +46601,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 942762337184432749, guid: b9c7a183a7a2e004cb24435cb080a708, type: 3}
   m_PrefabInstance: {fileID: 1161629565}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1162587196 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6767768870037744100, guid: 2e9c8f4bbe4ff5448a8dd4b3152e555a, type: 3}
-  m_PrefabInstance: {fileID: 1659029801}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1163520221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49342,7 +49324,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1222064750}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -25.079996, y: 0, z: 5.2100005}
+  m_LocalPosition: {x: -25.079996, y: -4.7, z: 5.2100005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -51860,7 +51842,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1293990275}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -31.93, y: 0, z: 5.68}
+  m_LocalPosition: {x: -31.93, y: -4.7, z: 5.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -64819,9 +64801,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2daa2a068bcb924eba954561537ddfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CarNumber: 0
+  carNumber: 0
   cpCrossed: 0
-  CarPosition: 0
+  carPosition: 0
   raceManager: {fileID: 718086846}
 --- !u!114 &1594958697
 MonoBehaviour:
@@ -65192,14 +65174,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2300a8cf773b60247a6eed7514a342cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PositionText: {fileID: 0}
-  LapsText: {fileID: 0}
-  FinalText: {fileID: 0}
-  ReadyForm: {fileID: 0}
-  NotReadyForm: {fileID: 0}
-  Car: {fileID: 0}
-  Cp: {fileID: 0}
-  Lap: 0
+  positionText: {fileID: 0}
+  lapsText: {fileID: 0}
+  finalText: {fileID: 0}
+  readyForm: {fileID: 0}
+  notReadyForm: {fileID: 0}
+  readyButton: {fileID: 0}
+  CP: {fileID: 0}
+  lap: 0
   raceManager: {fileID: 0}
   cpManager: {fileID: 0}
   isReady: 0
@@ -67806,7 +67788,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1857677816, guid: 2e9c8f4bbe4ff5448a8dd4b3152e555a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -31.874939
+      value: -31.875
       objectReference: {fileID: 0}
     - target: {fileID: 1987330756349463952, guid: 2e9c8f4bbe4ff5448a8dd4b3152e555a, type: 3}
       propertyPath: m_IsActive
@@ -67866,7 +67848,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3049323371546168348, guid: 2e9c8f4bbe4ff5448a8dd4b3152e555a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetReady
+      value: SetReadyButton
       objectReference: {fileID: 0}
     - target: {fileID: 3049323371546168348, guid: 2e9c8f4bbe4ff5448a8dd4b3152e555a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -68059,6 +68041,22 @@ PrefabInstance:
     - target: {fileID: 7482031566696213188, guid: 2e9c8f4bbe4ff5448a8dd4b3152e555a, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878525930166788442, guid: 2e9c8f4bbe4ff5448a8dd4b3152e555a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2480.688
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878525930166788442, guid: 2e9c8f4bbe4ff5448a8dd4b3152e555a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 295.329
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878525930166788442, guid: 2e9c8f4bbe4ff5448a8dd4b3152e555a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000030518
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878525930166788442, guid: 2e9c8f4bbe4ff5448a8dd4b3152e555a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: 8608742364796374874, guid: 2e9c8f4bbe4ff5448a8dd4b3152e555a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -70594,7 +70592,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1730822868}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -32.12999, y: 0, z: 1.0799985}
+  m_LocalPosition: {x: -32.12999, y: -4.7, z: 1.0799985}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -77810,7 +77808,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1897378758}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -10.19, y: 0, z: 5.35}
+  m_LocalPosition: {x: -10.19, y: -4.7, z: 5.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -79926,7 +79924,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1956995332}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -9.16, y: 0, z: 0.29}
+  m_LocalPosition: {x: -9.16, y: -4.7, z: 0.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

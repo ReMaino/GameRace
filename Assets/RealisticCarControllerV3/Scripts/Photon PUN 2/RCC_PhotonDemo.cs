@@ -31,7 +31,11 @@ public class RCC_PhotonDemo : Photon.Pun.MonoBehaviourPunCallbacks {
     public Transform[] spawnPoints;
     public GameObject menu;
 
-    [SerializeField] private RaceManage raceManager;
+    public static RCC_PhotonDemo RCC_PD;
+
+    public int totalplayers; // количество заспавненных машин
+
+    [SerializeField] private RaceManager raceManager;
 
     private void Start() {
 
@@ -45,8 +49,6 @@ public class RCC_PhotonDemo : Photon.Pun.MonoBehaviourPunCallbacks {
     public void Spawn() {
 
         int actorNo = raceManager.GetTotalCars();
-
-        Debug.Log(raceManager.GetTotalCars());
 
         if (actorNo > spawnPoints.Length) {
 
@@ -68,12 +70,8 @@ public class RCC_PhotonDemo : Photon.Pun.MonoBehaviourPunCallbacks {
 
         }
 
-        if (lastKnownPos == Vector3.zero) {
-
-            lastKnownPos = spawnPoints[actorNo].position;
-            lastKnownRot = spawnPoints[actorNo].rotation;
-
-        }
+        lastKnownPos = spawnPoints[actorNo].position;
+        lastKnownRot = spawnPoints[actorNo].rotation;
 
         lastKnownRot.x = 0f;
         lastKnownRot.z = 0f;

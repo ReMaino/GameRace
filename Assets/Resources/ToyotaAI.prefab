@@ -1176,9 +1176,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2daa2a068bcb924eba954561537ddfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CarNumber: 0
+  carNumber: 0
   cpCrossed: 0
-  CarPosition: 0
+  carPosition: 0
   raceManager: {fileID: 0}
 --- !u!114 &4704886017570207186
 MonoBehaviour:
@@ -1192,14 +1192,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2300a8cf773b60247a6eed7514a342cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PositionText: {fileID: 0}
-  LapsText: {fileID: 0}
-  FinalText: {fileID: 0}
-  ReadyForm: {fileID: 0}
-  NotReadyForm: {fileID: 0}
-  Car: {fileID: 0}
-  Cp: {fileID: 0}
-  Lap: 0
+  positionText: {fileID: 0}
+  lapsText: {fileID: 0}
+  finalText: {fileID: 0}
+  readyForm: {fileID: 0}
+  notReadyForm: {fileID: 0}
+  readyButton: {fileID: 0}
+  CP: {fileID: 0}
+  lap: 0
   raceManager: {fileID: 0}
   cpManager: {fileID: 0}
   isReady: 0

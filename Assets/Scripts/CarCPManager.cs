@@ -5,15 +5,15 @@ using UnityEngine;
 public class CarCPManager : MonoBehaviour
 {
 
-    public int CarNumber;
+    public int carNumber;
     public int cpCrossed = 0;
-    public int CarPosition;
+    public int carPosition;
 
-    public RaceManage raceManager;
+    public RaceManager raceManager;
 
     private void Awake()
     {
-        raceManager = FindObjectOfType<RaceManage>();
+        raceManager = FindObjectOfType<RaceManager>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -21,7 +21,7 @@ public class CarCPManager : MonoBehaviour
         if (other.gameObject.CompareTag("CP"))
         {
             cpCrossed += 1;
-            raceManager.CarCollectedCP(CarNumber, cpCrossed);
+            raceManager.CarCollectedCP(carNumber, cpCrossed);
         }
     }
 
